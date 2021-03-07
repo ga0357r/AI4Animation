@@ -299,45 +299,45 @@ public class CameraController : MonoBehaviour {
 		return MousePosition - LastMousePosition;
 	}
 
-	void OnGUI() {
-		if(!ShowGUI) {
-			return;
-		}
-		GetButtonStyle().fontSize = Mathf.RoundToInt(0.01f * Screen.width);
-		GetSliderStyle().fixedHeight = Mathf.RoundToInt(0.01f * Screen.width);
-		GetThumbStyle().fixedHeight = Mathf.RoundToInt(0.01f * Screen.width);
-		GetThumbStyle().fixedWidth = Mathf.RoundToInt(0.01f * Screen.width);
-		GetFontStyle().fixedHeight = Mathf.RoundToInt(0.01f * Screen.width);
-		GetFontStyle().fontSize = Mathf.RoundToInt(0.01f * Screen.width);
-		GUI.color = UltiDraw.White;
-		GUI.backgroundColor = Mode == MODE.Follow ? UltiDraw.Mustard : UltiDraw.Black;
-		if(GUI.Button(Utility.GetGUIRect(0.85f, 0.05f, 0.1f, 0.04f), "Follow", GetButtonStyle())) {
-			SetMode(MODE.Follow);
-		}
-		GUI.backgroundColor = Mode == MODE.LookAt ? UltiDraw.Mustard : UltiDraw.Black;
-		if(GUI.Button(Utility.GetGUIRect(0.85f, 0.1f, 0.1f, 0.04f), "Look At", GetButtonStyle())) {
-			SetMode(MODE.LookAt);
-		}
-		GUI.backgroundColor = Mode == MODE.FreeView ? UltiDraw.Mustard : UltiDraw.Black;
-		if(GUI.Button(Utility.GetGUIRect(0.85f, 0.15f, 0.1f, 0.04f), "Free View", GetButtonStyle())) {
-			SetMode(MODE.FreeView);
-		}
-		GUI.backgroundColor = Mode == MODE.FixedView ? UltiDraw.Mustard : UltiDraw.Black;
-		if(GUI.Button(Utility.GetGUIRect(0.85f, 0.2f, 0.1f, 0.04f), "Fixed View", GetButtonStyle())) {
-			SetMode(MODE.FixedView);
-		}
-		GUI.color = Color.black;
-		FOV = GUI.HorizontalSlider(Utility.GetGUIRect(0.85f, 0.25f, 0.1f, 0.025f), FOV, 0f, 10f, GetSliderStyle(), GetThumbStyle());
-		GUI.Label(Utility.GetGUIRect(0.96f, 0.25f, 0.04f, 0.025f), "FOV", GetFontStyle());
-		if(Mode == MODE.Follow) {
-			Yaw = Mathf.RoundToInt(GUI.HorizontalSlider(Utility.GetGUIRect(0.85f, 0.275f, 0.1f, 0.025f), Yaw, -180f, 180f, GetSliderStyle(), GetThumbStyle()));
-			GUI.Label(Utility.GetGUIRect(0.96f, 0.275f, 0.04f, 0.025f), "Yaw", GetFontStyle());
-			Pitch = Mathf.RoundToInt(GUI.HorizontalSlider(Utility.GetGUIRect(0.85f, 0.3f, 0.1f, 0.025f), Pitch, -45f, 45f, GetSliderStyle(), GetThumbStyle()));
-			GUI.Label(Utility.GetGUIRect(0.96f, 0.3f, 0.04f, 0.025f), "Pitch", GetFontStyle());
-			Damping = GUI.HorizontalSlider(Utility.GetGUIRect(0.85f, 0.325f, 0.1f, 0.025f), Damping, 0f, 1f, GetSliderStyle(), GetThumbStyle());
-			GUI.Label(Utility.GetGUIRect(0.96f, 0.325f, 0.04f, 0.025f), "Damping", GetFontStyle());
-		}
-	}
+	//void OnGUI() {
+	//	if(!ShowGUI) {
+	//		return;
+	//	}
+	//	GetButtonStyle().fontSize = Mathf.RoundToInt(0.01f * Screen.width);
+	//	GetSliderStyle().fixedHeight = Mathf.RoundToInt(0.01f * Screen.width);
+	//	GetThumbStyle().fixedHeight = Mathf.RoundToInt(0.01f * Screen.width);
+	//	GetThumbStyle().fixedWidth = Mathf.RoundToInt(0.01f * Screen.width);
+	//	GetFontStyle().fixedHeight = Mathf.RoundToInt(0.01f * Screen.width);
+	//	GetFontStyle().fontSize = Mathf.RoundToInt(0.01f * Screen.width);
+	//	GUI.color = UltiDraw.White;
+	//	GUI.backgroundColor = Mode == MODE.Follow ? UltiDraw.Mustard : UltiDraw.Black;
+	//	if(GUI.Button(Utility.GetGUIRect(0.85f, 0.05f, 0.1f, 0.04f), "Follow", GetButtonStyle())) {
+	//		SetMode(MODE.Follow);
+	//	}
+	//	GUI.backgroundColor = Mode == MODE.LookAt ? UltiDraw.Mustard : UltiDraw.Black;
+	//	if(GUI.Button(Utility.GetGUIRect(0.85f, 0.1f, 0.1f, 0.04f), "Look At", GetButtonStyle())) {
+	//		SetMode(MODE.LookAt);
+	//	}
+	//	GUI.backgroundColor = Mode == MODE.FreeView ? UltiDraw.Mustard : UltiDraw.Black;
+	//	if(GUI.Button(Utility.GetGUIRect(0.85f, 0.15f, 0.1f, 0.04f), "Free View", GetButtonStyle())) {
+	//		SetMode(MODE.FreeView);
+	//	}
+	//	GUI.backgroundColor = Mode == MODE.FixedView ? UltiDraw.Mustard : UltiDraw.Black;
+	//	if(GUI.Button(Utility.GetGUIRect(0.85f, 0.2f, 0.1f, 0.04f), "Fixed View", GetButtonStyle())) {
+	//		SetMode(MODE.FixedView);
+	//	}
+	//	GUI.color = Color.black;
+	//	FOV = GUI.HorizontalSlider(Utility.GetGUIRect(0.85f, 0.25f, 0.1f, 0.025f), FOV, 0f, 10f, GetSliderStyle(), GetThumbStyle());
+	//	GUI.Label(Utility.GetGUIRect(0.96f, 0.25f, 0.04f, 0.025f), "FOV", GetFontStyle());
+	//	if(Mode == MODE.Follow) {
+	//		Yaw = Mathf.RoundToInt(GUI.HorizontalSlider(Utility.GetGUIRect(0.85f, 0.275f, 0.1f, 0.025f), Yaw, -180f, 180f, GetSliderStyle(), GetThumbStyle()));
+	//		GUI.Label(Utility.GetGUIRect(0.96f, 0.275f, 0.04f, 0.025f), "Yaw", GetFontStyle());
+	//		Pitch = Mathf.RoundToInt(GUI.HorizontalSlider(Utility.GetGUIRect(0.85f, 0.3f, 0.1f, 0.025f), Pitch, -45f, 45f, GetSliderStyle(), GetThumbStyle()));
+	//		GUI.Label(Utility.GetGUIRect(0.96f, 0.3f, 0.04f, 0.025f), "Pitch", GetFontStyle());
+	//		Damping = GUI.HorizontalSlider(Utility.GetGUIRect(0.85f, 0.325f, 0.1f, 0.025f), Damping, 0f, 1f, GetSliderStyle(), GetThumbStyle());
+	//		GUI.Label(Utility.GetGUIRect(0.96f, 0.325f, 0.04f, 0.025f), "Damping", GetFontStyle());
+	//	}
+	//}
 
 	/*
 	public Vector3 MoveTo(Vector3 position, Quaternion rotation, float duration) {
