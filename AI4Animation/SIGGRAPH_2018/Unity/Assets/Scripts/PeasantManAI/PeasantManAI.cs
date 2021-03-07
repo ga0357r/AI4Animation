@@ -34,7 +34,6 @@ public class PeasantManAI : MonoBehaviour
     private void Chase()
     {
         SetDestination(player.transform.position);
-
         float distanceToTarget = Vector3.Distance(gameObject.transform.position, player.transform.position);
 
         if (distanceToTarget <= 2f)
@@ -51,9 +50,9 @@ public class PeasantManAI : MonoBehaviour
         anim.SetBool("IsAttacking", true);
 
         if (distanceToTarget > 2f)
-        {
             SetState(States.CHASE);
-        }
+
+        Player.Instance.IsCaught = true;
     }
 
     private void SetDestination(Vector3 targetVector)
