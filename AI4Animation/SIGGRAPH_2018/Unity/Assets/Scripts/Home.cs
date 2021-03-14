@@ -15,7 +15,7 @@ public class Home : MonoBehaviour
 
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.DrawSphere(transform.position, radius);
     }
