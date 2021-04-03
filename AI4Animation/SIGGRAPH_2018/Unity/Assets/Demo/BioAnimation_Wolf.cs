@@ -97,25 +97,25 @@ namespace SIGGRAPH_2018 {
 		}
 
 		void Start() {
-			Utility.SetFPS(60);
+			//Utility.SetFPS(60);
 
-			Forward = (Texture)Resources.Load("Forward");
-			Left = (Texture)Resources.Load("Left");
-			Right = (Texture)Resources.Load("Right");
-			Back = (Texture)Resources.Load("Back");
-			TurnLeft = (Texture)Resources.Load("TurnLeft");
-			TurnRight = (Texture)Resources.Load("TurnRight");
-			Disc = (Texture)Resources.Load("Disc");
-			Idle = (Texture)Resources.Load("Idle");
-			Move = (Texture)Resources.Load("Move");
-			Jump = (Texture)Resources.Load("Jump");
-			Sit = (Texture)Resources.Load("Sit");
-			Lie = (Texture)Resources.Load("Lie");
-			Stand = (Texture)Resources.Load("Stand");
-			FontStyle = new GUIStyle();
-			FontStyle.font = (Font)Resources.Load("Fonts/Coolvetica");
-			FontStyle.normal.textColor = Color.white;
-			FontStyle.alignment = TextAnchor.MiddleCenter;
+			//Forward = (Texture)Resources.Load("Forward");
+			//Left = (Texture)Resources.Load("Left");
+			//Right = (Texture)Resources.Load("Right");
+			//Back = (Texture)Resources.Load("Back");
+			//TurnLeft = (Texture)Resources.Load("TurnLeft");
+			//TurnRight = (Texture)Resources.Load("TurnRight");
+			//Disc = (Texture)Resources.Load("Disc");
+			//Idle = (Texture)Resources.Load("Idle");
+			//Move = (Texture)Resources.Load("Move");
+			//Jump = (Texture)Resources.Load("Jump");
+			//Sit = (Texture)Resources.Load("Sit");
+			//Lie = (Texture)Resources.Load("Lie");
+			//Stand = (Texture)Resources.Load("Stand");
+			//FontStyle = new GUIStyle();
+			//FontStyle.font = (Font)Resources.Load("Fonts/Coolvetica");
+			//FontStyle.normal.textColor = Color.white;
+			//FontStyle.alignment = TextAnchor.MiddleCenter;
 		}
 
 		public Trajectory GetTrajectory() {
@@ -493,68 +493,68 @@ namespace SIGGRAPH_2018 {
 			}
 		}
 
-		void OnGUI() {
-			if(NN.Parameters == null) {
-				return;
-			}
+		//void OnGUI() {
+		//	if(NN.Parameters == null) {
+		//		return;
+		//	}
 
-			UltiDraw.DrawGUITexture(new Vector2(0.5f, 0.05f), 0.03f, Disc, Input.GetKey(Controller.Forward) ? UltiDraw.Orange : UltiDraw.BlackGrey);
-			UltiDraw.DrawGUITexture(new Vector2(0.5f, 0.05f), 0.03f, Forward, UltiDraw.White);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.5f, 0.05f), 0.03f, Disc, Input.GetKey(Controller.Forward) ? UltiDraw.Orange : UltiDraw.BlackGrey);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.5f, 0.05f), 0.03f, Forward, UltiDraw.White);
 
-			UltiDraw.DrawGUITexture(new Vector2(0.465f, 0.05f), 0.03f, Disc, Input.GetKey(Controller.TurnLeft) ? UltiDraw.Orange : UltiDraw.BlackGrey);
-			UltiDraw.DrawGUITexture(new Vector2(0.465f, 0.05f), 0.03f, TurnLeft, UltiDraw.White);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.465f, 0.05f), 0.03f, Disc, Input.GetKey(Controller.TurnLeft) ? UltiDraw.Orange : UltiDraw.BlackGrey);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.465f, 0.05f), 0.03f, TurnLeft, UltiDraw.White);
 
-			UltiDraw.DrawGUITexture(new Vector2(0.535f, 0.05f), 0.03f, Disc, Input.GetKey(Controller.TurnRight) ? UltiDraw.Orange : UltiDraw.BlackGrey);
-			UltiDraw.DrawGUITexture(new Vector2(0.535f, 0.05f), 0.03f, TurnRight, UltiDraw.White);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.535f, 0.05f), 0.03f, Disc, Input.GetKey(Controller.TurnRight) ? UltiDraw.Orange : UltiDraw.BlackGrey);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.535f, 0.05f), 0.03f, TurnRight, UltiDraw.White);
 
-			UltiDraw.DrawGUITexture(new Vector2(0.5f, 0.11f), 0.03f, Disc, Input.GetKey(Controller.Back) ? UltiDraw.Orange : UltiDraw.BlackGrey);
-			UltiDraw.DrawGUITexture(new Vector2(0.5f, 0.11f), 0.03f, Back, UltiDraw.White);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.5f, 0.11f), 0.03f, Disc, Input.GetKey(Controller.Back) ? UltiDraw.Orange : UltiDraw.BlackGrey);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.5f, 0.11f), 0.03f, Back, UltiDraw.White);
 
-			UltiDraw.DrawGUITexture(new Vector2(0.465f, 0.11f), 0.03f, Disc, Input.GetKey(Controller.Left) ? UltiDraw.Orange : UltiDraw.BlackGrey);
-			UltiDraw.DrawGUITexture(new Vector2(0.465f, 0.11f), 0.03f, Left, UltiDraw.White);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.465f, 0.11f), 0.03f, Disc, Input.GetKey(Controller.Left) ? UltiDraw.Orange : UltiDraw.BlackGrey);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.465f, 0.11f), 0.03f, Left, UltiDraw.White);
 
-			UltiDraw.DrawGUITexture(new Vector2(0.535f, 0.11f), 0.03f, Disc, Input.GetKey(Controller.Right) ? UltiDraw.Orange : UltiDraw.BlackGrey);
-			UltiDraw.DrawGUITexture(new Vector2(0.535f, 0.11f), 0.03f, Right, UltiDraw.White);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.535f, 0.11f), 0.03f, Disc, Input.GetKey(Controller.Right) ? UltiDraw.Orange : UltiDraw.BlackGrey);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.535f, 0.11f), 0.03f, Right, UltiDraw.White);
 
-			FontStyle.fontSize = Mathf.RoundToInt(0.0125f * Screen.width);
+		//	FontStyle.fontSize = Mathf.RoundToInt(0.0125f * Screen.width);
 
-			UltiDraw.DrawGUITexture(new Vector2(0.4f, 0.18f), 0.03f, Disc, Color.Lerp(UltiDraw.BlackGrey, UltiDraw.Orange, Trajectory.Points[RootPointIndex].Styles[0]));
-			UltiDraw.DrawGUITexture(new Vector2(0.4f, 0.18f), 0.025f, Idle, UltiDraw.White);
-			GUI.Label(Utility.GetGUIRect(0.385f, 0.21f, 0.03f, 0.03f), Mathf.RoundToInt(Trajectory.Points[RootPointIndex].Styles[0]*100f) + "%", FontStyle);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.4f, 0.18f), 0.03f, Disc, Color.Lerp(UltiDraw.BlackGrey, UltiDraw.Orange, Trajectory.Points[RootPointIndex].Styles[0]));
+		//	UltiDraw.DrawGUITexture(new Vector2(0.4f, 0.18f), 0.025f, Idle, UltiDraw.White);
+		//	GUI.Label(Utility.GetGUIRect(0.385f, 0.21f, 0.03f, 0.03f), Mathf.RoundToInt(Trajectory.Points[RootPointIndex].Styles[0]*100f) + "%", FontStyle);
 
-			UltiDraw.DrawGUITexture(new Vector2(0.44f, 0.18f), 0.03f, Disc, Color.Lerp(UltiDraw.BlackGrey, UltiDraw.Orange, Trajectory.Points[RootPointIndex].Styles[1]));
-			UltiDraw.DrawGUITexture(new Vector2(0.44f, 0.18f), 0.02f, Move, UltiDraw.White);
-			GUI.Label(Utility.GetGUIRect(0.425f, 0.21f, 0.03f, 0.03f), Mathf.RoundToInt(Trajectory.Points[RootPointIndex].Styles[1]*100f) + "%", FontStyle);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.44f, 0.18f), 0.03f, Disc, Color.Lerp(UltiDraw.BlackGrey, UltiDraw.Orange, Trajectory.Points[RootPointIndex].Styles[1]));
+		//	UltiDraw.DrawGUITexture(new Vector2(0.44f, 0.18f), 0.02f, Move, UltiDraw.White);
+		//	GUI.Label(Utility.GetGUIRect(0.425f, 0.21f, 0.03f, 0.03f), Mathf.RoundToInt(Trajectory.Points[RootPointIndex].Styles[1]*100f) + "%", FontStyle);
 
-			UltiDraw.DrawGUITexture(new Vector2(0.48f, 0.18f), 0.03f, Disc, Color.Lerp(UltiDraw.BlackGrey, UltiDraw.Orange, Trajectory.Points[RootPointIndex].Styles[2]));
-			UltiDraw.DrawGUITexture(new Vector2(0.48f, 0.18f), 0.02f, Jump, UltiDraw.White);
-			GUI.Label(Utility.GetGUIRect(0.465f, 0.21f, 0.03f, 0.03f), Mathf.RoundToInt(Trajectory.Points[RootPointIndex].Styles[2]*100f) + "%", FontStyle);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.48f, 0.18f), 0.03f, Disc, Color.Lerp(UltiDraw.BlackGrey, UltiDraw.Orange, Trajectory.Points[RootPointIndex].Styles[2]));
+		//	UltiDraw.DrawGUITexture(new Vector2(0.48f, 0.18f), 0.02f, Jump, UltiDraw.White);
+		//	GUI.Label(Utility.GetGUIRect(0.465f, 0.21f, 0.03f, 0.03f), Mathf.RoundToInt(Trajectory.Points[RootPointIndex].Styles[2]*100f) + "%", FontStyle);
 
-			UltiDraw.DrawGUITexture(new Vector2(0.52f, 0.18f), 0.03f, Disc, Color.Lerp(UltiDraw.BlackGrey, UltiDraw.Orange, Trajectory.Points[RootPointIndex].Styles[3]));
-			UltiDraw.DrawGUITexture(new Vector2(0.52f, 0.18f), 0.02f, Sit, UltiDraw.White);
-			GUI.Label(Utility.GetGUIRect(0.505f, 0.21f, 0.03f, 0.03f), Mathf.RoundToInt(Trajectory.Points[RootPointIndex].Styles[3]*100f) + "%", FontStyle);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.52f, 0.18f), 0.03f, Disc, Color.Lerp(UltiDraw.BlackGrey, UltiDraw.Orange, Trajectory.Points[RootPointIndex].Styles[3]));
+		//	UltiDraw.DrawGUITexture(new Vector2(0.52f, 0.18f), 0.02f, Sit, UltiDraw.White);
+		//	GUI.Label(Utility.GetGUIRect(0.505f, 0.21f, 0.03f, 0.03f), Mathf.RoundToInt(Trajectory.Points[RootPointIndex].Styles[3]*100f) + "%", FontStyle);
 
-			UltiDraw.DrawGUITexture(new Vector2(0.56f, 0.18f), 0.03f, Disc, Color.Lerp(UltiDraw.BlackGrey, UltiDraw.Orange, Trajectory.Points[RootPointIndex].Styles[4]));
-			UltiDraw.DrawGUITexture(new Vector2(0.56f, 0.18f), 0.02f, Stand, UltiDraw.White);
-			GUI.Label(Utility.GetGUIRect(0.545f, 0.21f, 0.03f, 0.03f), Mathf.RoundToInt(Trajectory.Points[RootPointIndex].Styles[4]*100f) + "%", FontStyle);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.56f, 0.18f), 0.03f, Disc, Color.Lerp(UltiDraw.BlackGrey, UltiDraw.Orange, Trajectory.Points[RootPointIndex].Styles[4]));
+		//	UltiDraw.DrawGUITexture(new Vector2(0.56f, 0.18f), 0.02f, Stand, UltiDraw.White);
+		//	GUI.Label(Utility.GetGUIRect(0.545f, 0.21f, 0.03f, 0.03f), Mathf.RoundToInt(Trajectory.Points[RootPointIndex].Styles[4]*100f) + "%", FontStyle);
 
-			UltiDraw.DrawGUITexture(new Vector2(0.6f, 0.18f), 0.03f, Disc, Color.Lerp(UltiDraw.BlackGrey, UltiDraw.Orange, Trajectory.Points[RootPointIndex].Styles[5]));
-			UltiDraw.DrawGUITexture(new Vector2(0.6f, 0.18f), 0.02f, Lie, UltiDraw.White);
-			GUI.Label(Utility.GetGUIRect(0.585f, 0.21f, 0.03f, 0.03f), Mathf.RoundToInt(Trajectory.Points[RootPointIndex].Styles[5]*100f) + "%", FontStyle);
+		//	UltiDraw.DrawGUITexture(new Vector2(0.6f, 0.18f), 0.03f, Disc, Color.Lerp(UltiDraw.BlackGrey, UltiDraw.Orange, Trajectory.Points[RootPointIndex].Styles[5]));
+		//	UltiDraw.DrawGUITexture(new Vector2(0.6f, 0.18f), 0.02f, Lie, UltiDraw.White);
+		//	GUI.Label(Utility.GetGUIRect(0.585f, 0.21f, 0.03f, 0.03f), Mathf.RoundToInt(Trajectory.Points[RootPointIndex].Styles[5]*100f) + "%", FontStyle);
 
-			GUI.Label(Utility.GetGUIRect(0.5f - 0.25f/2f, 0.235f, 0.25f, 0.05f), "Velocity " + Trajectory.Points[RootPointIndex].GetVelocity().magnitude.ToString("F1") + "m/s", FontStyle);
+		//	GUI.Label(Utility.GetGUIRect(0.5f - 0.25f/2f, 0.235f, 0.25f, 0.05f), "Velocity " + Trajectory.Points[RootPointIndex].GetVelocity().magnitude.ToString("F1") + "m/s", FontStyle);
 
-			GUIStyle style = new GUIStyle();
-			int size = Mathf.RoundToInt(0.01f*Screen.width);
-			Rect rect = new Rect(10, Screen.height-10-size-size, Screen.width-2f*10, size);
-			style.alignment = TextAnchor.MiddleRight;
-			style.fontSize = size;
-			style.normal.textColor = Color.black;
-			float msec = NetworkPredictionTime * 1000.0f;
-			float nn = 1.0f / NetworkPredictionTime;
-			string text = string.Format("{0:0.0} ms for NN", msec, nn);
-			GUI.Label(rect, text, style);
-		}
+		//	GUIStyle style = new GUIStyle();
+		//	int size = Mathf.RoundToInt(0.01f*Screen.width);
+		//	Rect rect = new Rect(10, Screen.height-10-size-size, Screen.width-2f*10, size);
+		//	style.alignment = TextAnchor.MiddleRight;
+		//	style.fontSize = size;
+		//	style.normal.textColor = Color.black;
+		//	float msec = NetworkPredictionTime * 1000.0f;
+		//	float nn = 1.0f / NetworkPredictionTime;
+		//	string text = string.Format("{0:0.0} ms for NN", msec, nn);
+		//	GUI.Label(rect, text, style);
+		//}
 
 		void OnRenderObject() {
 			if(Application.isPlaying) {
