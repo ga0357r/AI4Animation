@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialLogic : MonoBehaviour
 {
@@ -98,6 +99,8 @@ public class TutorialLogic : MonoBehaviour
                 }
             }
 
+            if (isWPressed && isSPressed && isAPressed && isDPressed && isQPressed && isEPressed && isLShiftPressed)
+                SceneManager.LoadSceneAsync("Demo");
 
         }
     }
