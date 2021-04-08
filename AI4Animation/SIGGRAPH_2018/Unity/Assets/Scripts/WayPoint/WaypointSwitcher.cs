@@ -7,10 +7,11 @@ public class WaypointSwitcher : MonoBehaviour
     [SerializeField] private float sphereRadius;
     [SerializeField] private WayPointTrail wayPointTrail;
     [SerializeField] private float distance;
+    [SerializeField] private ImportantInfo importantInfo;
 
     private void Update()
     {
-        distance = Vector3.Distance(transform.position, Player.Instance.transform.position);
+        distance = Vector3.Distance(transform.position, Wolf.Instance.transform.position);
 
         if (distance <= sphereRadius)
         {
@@ -21,15 +22,19 @@ public class WaypointSwitcher : MonoBehaviour
             {
                 case "Waypoint Switcher_1":
                     Enemies.Instance.Enemy[0].gameObject.SetActive(true);
+                    importantInfo.gameObject.SetActive(true);
                     break;
                 case "Waypoint Switcher_5":
                     Enemies.Instance.Enemy[1].gameObject.SetActive(true);
+                    importantInfo.gameObject.SetActive(true);
                     break;
                 case "Waypoint Switcher_7":
                     Enemies.Instance.Enemy[2].gameObject.SetActive(true);
+                    importantInfo.gameObject.SetActive(true);
                     break;
                 case "Waypoint Switcher_8":
                     Enemies.Instance.Enemy[3].gameObject.SetActive(true);
+                    importantInfo.gameObject.SetActive(true);
                     break;
                 default:
                     break;

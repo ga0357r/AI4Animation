@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Wolf : MonoBehaviour
 {
-    private static Player instance;
+    private static Wolf instance;
     private bool isHome = false;
     private bool isCaught = false;
-    public static Player Instance { get { return instance; } }
+    public static Wolf Instance { get { return instance; } }
     public bool IsHome { get { return isHome; } set { isHome = value; } }
     public bool IsCaught { get { return isCaught; } set { isCaught = value; } }
 

@@ -8,10 +8,10 @@ public class Home : MonoBehaviour
 
     private void Update()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, Player.Instance.transform.position);
+        float distanceToPlayer = Vector3.Distance(transform.position, Wolf.Instance.transform.position);
 
         if (distanceToPlayer < radius)
-            Player.Instance.IsHome = true;
+            Wolf.Instance.IsHome = true;
 
     }
 

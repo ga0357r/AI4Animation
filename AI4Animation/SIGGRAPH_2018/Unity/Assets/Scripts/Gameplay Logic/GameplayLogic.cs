@@ -9,7 +9,13 @@ public class GameplayLogic : MonoBehaviour
 {
     [SerializeField] private GameObject youWin;
     [SerializeField] private GameObject youLose;
+    [SerializeField] private string sceneName;
     private float timeRemainingBeforeRestarting = 3;
+
+    private void Awake()
+    {
+        sceneName = SceneManager.GetActiveScene().name;
+    }
 
     private void Update()
     {
@@ -18,10 +24,10 @@ public class GameplayLogic : MonoBehaviour
 
     private void EndGame()
     {
-        if (Player.Instance.IsHome)
+        if (Wolf.Instance.IsHome)
             PlayerWins();
 
-        if (Player.Instance.IsCaught)
+        if (Wolf.Instance.IsCaught)
             PlayerLoses();
     }
 
@@ -31,7 +37,9 @@ public class GameplayLogic : MonoBehaviour
         youWin.SetActive(true);
         youLose.SetActive(false);
         Time.timeScale = 0;
-        Player.Instance.GetComponent<BioAnimation_Wolf>().enabled = false;
+
+        if (Wolf.Instance.GetComponent<BioAnimation_Wolf>())
+            Wolf.Instance.GetComponent<BioAnimation_Wolf>().enabled = false;
     }
 
     private void PlayerLoses()
@@ -39,14 +47,17 @@ public class GameplayLogic : MonoBehaviour
         Debug.Log("You Lose");
         youLose.SetActive(true);
         youWin.SetActive(false);
-        Player.Instance.GetComponent<BioAnimation_Wolf>().enabled = false;
+
+        if (Wolf.Instance.GetComponent<BioAnimation_Wolf>())
+            Wolf.Instance.GetComponent<BioAnimation_Wolf>().enabled = false;
+
         youLose.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = " You Lose! \n Restarting in " + (int)timeRemainingBeforeRestarting;
         timeRemainingBeforeRestarting -= Time.deltaTime;
 
         if (timeRemainingBeforeRestarting <= 0)
         {
             timeRemainingBeforeRestarting = 3;
-            SceneManager.LoadSceneAsync("Demo");
+            SceneManager.LoadSceneAsync(sceneName);
         }
     }
 }

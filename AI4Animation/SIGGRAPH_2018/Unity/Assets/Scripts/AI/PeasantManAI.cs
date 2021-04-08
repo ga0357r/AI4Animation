@@ -52,7 +52,7 @@ public class PeasantManAI : MonoBehaviour
         if (distanceToTarget > 2f)
             SetState(States.CHASE);
 
-        Player.Instance.IsCaught = true;
+        Wolf.Instance.IsCaught = true;
     }
 
     private void SetDestination(Vector3 targetVector)
