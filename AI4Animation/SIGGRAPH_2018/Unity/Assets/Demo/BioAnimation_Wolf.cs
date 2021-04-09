@@ -151,12 +151,12 @@ namespace SIGGRAPH_2018 {
 			}
 
 			if(TrajectoryControl) {
-				PredictTrajectory();
-			}
+                PredictTrajectory();
+            }
 
 			if(NN.Parameters != null) {
-				Animate();
-			}
+                Animate();
+            }
 
 			if(MotionEditing != null) {
 				MotionEditing.Process();
@@ -586,7 +586,7 @@ namespace SIGGRAPH_2018 {
 				}
 
 				UltiDraw.Begin();
-				UltiDraw.DrawGUIHorizontalBar(new Vector2(0.5f, 0.74f), new Vector2(0.25f, 0.025f), UltiDraw.DarkGrey.Transparent(0.5f), 0.0025f, UltiDraw.Black, Trajectory.Points[RootPointIndex].GetVelocity().magnitude / 4f, UltiDraw.DarkGreen);
+				//UltiDraw.DrawGUIHorizontalBar(new Vector2(0.5f, 0.74f), new Vector2(0.25f, 0.025f), UltiDraw.DarkGrey.Transparent(0.5f), 0.0025f, UltiDraw.Black, Trajectory.Points[RootPointIndex].GetVelocity().magnitude / 4f, UltiDraw.DarkGreen);
 				UltiDraw.End();
 			}
 		}
