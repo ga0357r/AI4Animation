@@ -17,6 +17,11 @@ public class GameplayLogic : MonoBehaviour
         sceneName = SceneManager.GetActiveScene().name;
     }
 
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     private void Update()
     {
         EndGame();
